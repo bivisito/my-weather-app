@@ -1,0 +1,75 @@
+.container {
+  max-width: 650px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.weather-app {
+  border: 1px solid rgb(168, 166, 166);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.emoji1 {
+  font-size: 95px;
+  margin-left: 35px;
+  margin-top: -15px;
+}
+
+.ppt {
+  margin-left: 15px;
+}
+.temp1 {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.loc1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.emojis {
+  font-size: 35px;
+  margin-left: 1px;
+}
+
+.forecast {
+  margin-left: 80px;
+}
+
+.date {
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.weekDays {
+  margin-left: 4px;
+  font-size: 18px;
+}
+.temps {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.units {
+  position: relative;
+  top: -22px;
+}
+
+.humidityWind {
+  line-height: 19px;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.date {
+  margin-left: 35px;
+}
