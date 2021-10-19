@@ -114,6 +114,11 @@ function showTemperature(response) {
   let humidity = Math.round(response.data.main.humidity);
   let humidityHeader = document.querySelector("#humidity");
   humidityHeader.innerHTML = `Humidity: ${humidity}%`;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src", 
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let currentLocBttn = document.querySelector("#current-loc-bttn");
