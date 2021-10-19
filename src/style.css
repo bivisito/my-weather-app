@@ -20,7 +20,7 @@ li {
 .emoji1 {
   font-size: 95px;
   margin-left: 35px;
-  margin-top: -25px;
+  margin-top: -30px;
 }
 
 .ppt {
@@ -42,7 +42,7 @@ li {
 }
 
 .forecast {
-  margin-left: 80px;
+  margin-left: 65px;
 }
 
 .date {
@@ -72,4 +72,13 @@ li {
 
 .date {
   margin-left: 35px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+ text-decoration: none;
 }

@@ -47,24 +47,6 @@ if (hours < 12) {
   time.innerHTML = `${hours}:${minute} pm`;
 }
 
-//Fahrenheit button
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let temp1 = document.querySelector("#temp1");
-  temp1.innerHTML = `70`;
-}
-let fahrenheitButton = document.querySelector("#fahren-Button");
-fahrenheitButton.addEventListener("click", displayFahrenheit);
-
-// Celsius button
-function displayCelsius(event) {
-  event.preventDefault();
-  let temp1 = document.querySelector("#temp1");
-  temp1.innerHTML = "21";
-}
-let celsiusButton = document.querySelector("#celsius-Button");
-celsiusButton.addEventListener("click", displayCelsius);
-
 // Search for city and save city
 function searchCity(event) {
   event.preventDefault();
@@ -102,7 +84,8 @@ function displayPosition(position) {
 }
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let tempHeader = document.querySelector("#temp1");
   tempHeader.innerHTML = `${temperature}`;
   let city = response.data.name;
@@ -123,6 +106,35 @@ function showTemperature(response) {
 
 let currentLocBttn = document.querySelector("#current-loc-bttn");
 currentLocBttn.addEventListener("click", showLocation);
+
+//Fahrenheit button
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let temp1 = document.querySelector("#temp1");
+  celsiusButton.classList.remove("active");
+  fahrenheitButton.classList.add("active");
+  let fahrenheitTemp = (celsiusTemperature * 9) /5 + 32;
+  temp1.innerHTML = Math.round(fahrenheitTemp);
+}
+
+
+// Celsius button
+function displayCelsius(event) {
+  event.preventDefault();
+  celsiusButton.classList.add("active");
+  fahrenheitButton.classList.remove("active");
+  let temp1 = document.querySelector("#temp1");
+  temp1.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitButton = document.querySelector("#fahren-Button");
+fahrenheitButton.addEventListener("click", displayFahrenheit);
+
+let celsiusButton = document.querySelector("#celsius-Button");
+celsiusButton.addEventListener("click", displayCelsius);
+
 
 //Toronto link
 function torontoDisplay(response) {
