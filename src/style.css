@@ -20,7 +20,7 @@ li {
 .emoji1 {
   font-size: 95px;
   margin-left: 35px;
-  margin-top: -30px;
+  margin-top: -38px;
 }
 
 .ppt {
@@ -81,4 +81,11 @@ li {
 
 .active:hover {
  text-decoration: none;
+}
+
+.description {
+  margin-top:-16px;
+  font-size: 16px;
+  font-style: italic;
+  text-transform: capitalize;
 }

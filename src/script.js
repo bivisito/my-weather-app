@@ -102,6 +102,8 @@ function showTemperature(response) {
     "src", 
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let descriptionHeader = document.querySelector("#description");
+  descriptionHeader.innerHTML = response.data.weather[0].description;
 }
 
 let currentLocBttn = document.querySelector("#current-loc-bttn");
