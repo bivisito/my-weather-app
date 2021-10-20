@@ -62,6 +62,7 @@ li {
 .units {
   position: relative;
   top: -22px;
+  text-decoration: none;
 }
 
 .humidityWind {
@@ -85,7 +86,8 @@ li {
 
 .description {
   margin-top:-16px;
-  font-size: 16px;
+  margin-left: 9px;
+  font-size: 14px;
   font-style: italic;
   text-transform: capitalize;
 }
