@@ -47,27 +47,6 @@ if (hours < 12) {
   time.innerHTML = `${hours}:${minute} pm`;
 }
 
-// Search for city and save city
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
-  let city = document.querySelector("#city");
-  city.innerHTML = `${searchInput.value}`;
-  findCity(searchInput.value);
-}
-
-let form = document.querySelector("form");
-form.addEventListener("submit", searchCity);
-
-//Locate the city
-function findCity(city) {
-  let apiKey = "bc5ca568ee2d7c71357ca430a3ff8705";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showTemperature);
-}
-
 //Current location button
 function showLocation(event) {
   event.preventDefault();
@@ -137,6 +116,27 @@ fahrenheitButton.addEventListener("click", displayFahrenheit);
 
 let celsiusButton = document.querySelector("#celsius-Button");
 celsiusButton.addEventListener("click", displayCelsius);
+
+// Search for city and save city
+function searchCity(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#city-input");
+  let city = document.querySelector("#city");
+  city.innerHTML = `${searchInput.value}`;
+  findCity(searchInput.value);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", searchCity);
+
+//Locate the city
+function findCity(city) {
+  let apiKey = "bc5ca568ee2d7c71357ca430a3ff8705";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(showTemperature);
+}
 
 
 //Toronto link
