@@ -37,6 +37,7 @@ li {
 }
 
 .emojis {
+  margin-top: -5px;
   font-size: 35px;
   margin-left: 1px;
 }
@@ -54,10 +55,6 @@ li {
   margin-left: 4px;
   font-size: 18px;
 }
-.temps {
-  margin-left: 5px;
-  font-size: 18px;
-}
 
 .units {
   position: relative;
@@ -69,6 +66,14 @@ li {
   line-height: 19px;
   font-style: italic;
   font-size: 15px;
+}
+
+.forecast-temps{
+  font-size: 15px;
+}
+
+.min-temp {
+opacity: 0.5;
 }
 
 .date {
