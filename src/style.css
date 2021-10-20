@@ -78,7 +78,9 @@ li {
 .active {
   color: black;
   cursor: default;
+  text-decoration: none;
 }
+
 
 .active:hover {
  text-decoration: none;
@@ -86,7 +88,7 @@ li {
 
 .description {
   margin-top:-16px;
-  margin-left: 9px;
+  margin-left: 13px;
   font-size: 14px;
   font-style: italic;
   text-transform: capitalize;
