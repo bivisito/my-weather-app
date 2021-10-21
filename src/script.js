@@ -138,6 +138,45 @@ function findCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = `<div class="row">`;
+let days = ["Tue" , "Wed", "Thu", "Fri", "Sat"];
+days.forEach(function(day) {
+forecastHTML = forecastHTML + 
+      `   
+             <div class="col-2">
+             <ul>
+               <li class = "weekDays">
+                 ${day}
+               </li>
+               <li class = "emojis">
+                 <img 
+            src = "http://openweathermap.org/img/wn/50d@2x.png"
+            alt = ""
+            width = "42"
+            />
+               </li>
+               <li class = "forecast-temps">
+                 <span class = "max-temp">
+                    28°
+                 </span>
+                 <span class = "min-temp">
+                    20°
+                 </span>
+               </li>
+             </ul>
+             </div>                  
+        `;
+});
+ 
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+
+}
+
 
 //Toronto link
 function torontoDisplay(response) {
@@ -186,3 +225,5 @@ function moscowDisplay(response) {
 }
 let moscowLink = document.querySelector("#moscow");
 moscowLink.addEventListener("click", moscowDisplay);
+
+displayForecast();
