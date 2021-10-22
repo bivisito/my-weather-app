@@ -47,45 +47,54 @@ if (hours < 12) {
   time.innerHTML = `${hours}:${minute} pm`;
 }
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+return days[day];
+}
 
 function displayForecast(response) {
-console.log(response.data.daily);
+let forecast = response.data.daily;
+
 let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
-let days = ["Tue" , "Wed", "Thu", "Fri", "Sat"];
-days.forEach(function(day) {
-forecastHTML = forecastHTML + 
+forecast.forEach(function (forecastDay, index) {
+  if (index < 5) {
+forecastHTML = 
+    forecastHTML + 
       `   
              <div class="col-2">
              <ul>
                <li class = "weekDays">
-                 ${day}
+                 ${formatDay(forecastDay.dt)}
                </li>
                <li class = "emojis">
                  <img 
-            src = "http://openweathermap.org/img/wn/50d@2x.png"
+            src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             alt = ""
             width = "42"
             />
                </li>
                <li class = "forecast-temps">
                  <span class = "max-temp">
-                    28°
+                    ${Math.round(forecastDay.temp.max)}°
                  </span>
                  <span class = "min-temp">
-                    20°
+                   ${Math.round(forecastDay.temp.min)}°
                  </span>
                </li>
              </ul>
              </div>                  
         `;
+  }
 });
  
 
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
-
 }
 
 function getForecast(coordinates) {
@@ -173,14 +182,14 @@ function searchCity(event) {
   let searchInput = document.querySelector("#city-input");
   let city = document.querySelector("#city");
   city.innerHTML = `${searchInput.value}`;
-  findCity(searchInput.value);
+  searchCity(searchInput.value);
 }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", searchCity);
 
 //Locate the city
-function findCity(city) {
+function searchCity(city) {
   let apiKey = "bc5ca568ee2d7c71357ca430a3ff8705";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
@@ -191,7 +200,7 @@ function findCity(city) {
 //Toronto link
 function torontoDisplay(response) {
   let city = "toronto";
-  findCity(city);
+  searchCity(city);
 }
 let torontoLink = document.querySelector("#toronto");
 torontoLink.addEventListener("click", torontoDisplay);
@@ -199,7 +208,7 @@ torontoLink.addEventListener("click", torontoDisplay);
 //New York link
 function newYorkDisplay(response) {
   let city = "new york";
-  findCity(city);
+  searchCity(city);
 }
 let newYorkLink = document.querySelector("#newYork");
 newYorkLink.addEventListener("click", newYorkDisplay);
@@ -207,7 +216,7 @@ newYorkLink.addEventListener("click", newYorkDisplay);
 //London link
 function londonDisplay(response) {
   let city = "london";
-  findCity(city);
+  searchCity(city);
 }
 let londonLink = document.querySelector("#london");
 londonLink.addEventListener("click", londonDisplay);
@@ -215,7 +224,7 @@ londonLink.addEventListener("click", londonDisplay);
 //Paris link
 function parisDisplay(response) {
   let city = "paris";
-  findCity(city);
+  searchCity(city);
 }
 let parisLink = document.querySelector("#paris");
 parisLink.addEventListener("click", parisDisplay);
@@ -223,7 +232,7 @@ parisLink.addEventListener("click", parisDisplay);
 //Milan link
 function milanDisplay(response) {
   let city = "milan";
-  findCity(city);
+  searchCity(city);
 }
 let milanLink = document.querySelector("#milan");
 milanLink.addEventListener("click", milanDisplay);
@@ -231,7 +240,9 @@ milanLink.addEventListener("click", milanDisplay);
 //Moscow link
 function moscowDisplay(response) {
   let city = "moscow";
-  findCity(city);
+  searchCity(city);
 }
 let moscowLink = document.querySelector("#moscow");
 moscowLink.addEventListener("click", moscowDisplay);
+
+searchCity("toronto");
