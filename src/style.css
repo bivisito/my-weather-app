@@ -1,5 +1,6 @@
 .container {
   max-width: 650px;
+  background-color: #d2e8fd;
 }
 
 ul {
@@ -130,3 +131,4 @@ opacity: 0.5;
 .units {
   font-family: 'PT Serif', serif;
 }
+
