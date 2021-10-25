@@ -40,12 +40,8 @@ if (minute < 10) {
   minute = `0${minute}`;
 }
 
-//Display am and pm
-if (hours < 12) {
-  time.innerHTML = `${hours}:${minute} am`;
-} else {
-  time.innerHTML = `${hours}:${minute} pm`;
-}
+//Display time
+time.innerHTML = `${hours}:${minute}`;
 
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);

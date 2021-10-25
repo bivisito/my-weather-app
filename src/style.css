@@ -63,8 +63,8 @@ li {
 }
 
 .humidityWind {
-  line-height: 19px;
-  font-style: italic;
+  line-height: 21px;
+  font-family: 'PT Serif', serif;
   font-size: 15px;
 }
 
@@ -97,4 +97,36 @@ opacity: 0.5;
   font-size: 14px;
   font-style: italic;
   text-transform: capitalize;
+  font-family: 'PT Serif', serif;
+  font-size: 15px;
+}
+
+.city { 
+  font-family: 'Zen Antique', serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.forecast {
+  font-family: 'Zen Antique', serif;
+}
+
+.cities {
+  font-family: 'PT Serif', serif;
+}
+.date {
+  font-family: 'PT Serif', serif;
+  font-size: large;
+}
+
+.time {
+  font-family: 'PT Serif', serif;
+}
+
+.footer {
+  font-family: 'PT Serif', serif;
+}
+
+.units {
+  font-family: 'PT Serif', serif;
 }

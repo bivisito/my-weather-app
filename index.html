@@ -7,13 +7,17 @@
     <title>Wheater App</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="src/style.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Zen+Antique&display=swap" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
   </br >
     <div class="container">
  <div class = "weather-app">
-      <div class="row">
+      <div class="row cities">
           <span class="toronto col-2"> <a href = "#" id = "toronto">Toronto </a> </span>
           <span class="newYork col-2"> <a href = "#" id = "newYork">New York </a> </span>
           <span class="london col-2">  <a href = "#" id = "london">London </a> </span>
@@ -94,7 +98,7 @@
 
           <div class="col-4 date" id = "city-date-time">
               <ul>
-                <li class = "loc1" id = "city">
+                <li class = "city" id = "city">
           Toronto
                 </li>
                 <li id = "date">
@@ -113,7 +117,7 @@
           </div>
     </div>
  </div>
-     <p>
+     <p class = "footer">
       <a href = "https://github.com/bivisito/my-weather-app"> Open-source code </a> by Victoria Totonea
     </p>
     <script src="src/script.js"></script>
