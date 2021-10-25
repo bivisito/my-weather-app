@@ -43,6 +43,7 @@ if (minute < 10) {
 //Display time
 time.innerHTML = `${hours}:${minute}`;
 
+
 function formatDay(timestamp) {
 let date = new Date(timestamp * 1000);
 let day = date.getDay();
@@ -172,19 +173,6 @@ fahrenheitButton.addEventListener("click", displayFahrenheit);
 let celsiusButton = document.querySelector("#celsius-Button");
 celsiusButton.addEventListener("click", displayCelsius);
 
-// Search for city and save city
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
-  let city = document.querySelector("#city");
-  city.innerHTML = `${searchInput.value}`;
-  searchCity(searchInput.value);
-}
-
-let form = document.querySelector("form");
-form.addEventListener("submit", searchCity);
-
-//Locate the city
 function searchCity(city) {
   let apiKey = "bc5ca568ee2d7c71357ca430a3ff8705";
   let units = "metric";
@@ -192,6 +180,16 @@ function searchCity(city) {
 
   axios.get(apiUrl).then(showTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#city-input");
+  searchCity(searchInput.value);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
+
 
 //Toronto link
 function torontoDisplay(response) {

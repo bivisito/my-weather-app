@@ -1,6 +1,7 @@
 .container {
   max-width: 650px;
   background-color: #d2e8fd;
+  margin-top: 60px;
 }
 
 ul {
@@ -25,16 +26,12 @@ li {
 }
 
 .ppt {
-  margin-left: 15px;
+  margin-left: 28px;
 }
+
 .temp1 {
   font-size: 45px;
   font-weight: 600;
-}
-
-.loc1 {
-  font-size: 24px;
-  font-weight: 500;
 }
 
 .emojis {
@@ -87,7 +84,6 @@ opacity: 0.5;
   text-decoration: none;
 }
 
-
 .active:hover {
  text-decoration: none;
 }
@@ -100,6 +96,7 @@ opacity: 0.5;
   text-transform: capitalize;
   font-family: 'PT Serif', serif;
   font-size: 15px;
+  font-weight:600;
 }
 
 .city { 
